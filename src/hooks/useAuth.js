@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { auth } from "@/firebase/config";
+
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/config";
 
 "use strict";
 
@@ -18,11 +19,12 @@ export function useAuth() {
         return () => unsubscribe();
     }, []);
 
-    const login = async (email, password) => {
+    const login = async (email, password, setError) => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {
-            console.error(error);
+            console.log("error", {error});
+            setError(error.message);
         }
     };
 
