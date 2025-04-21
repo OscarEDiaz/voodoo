@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 
-import "../../css/login.css";
+import "../css/login.css";
 import { useNavbar } from '../features/navigation/hooks/useNavbar';
+import { LoginForm } from '../features/auth/components/LoginForm';
 
 /**
  * @author oeramire
@@ -31,7 +32,7 @@ export const Login = () => {
 
     return (
         <div className='v-login-container'>
-            
+            <LoginForm />
         </div>
     );
 };
