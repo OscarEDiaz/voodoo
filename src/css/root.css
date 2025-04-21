@@ -13,6 +13,10 @@
     background-color: rgb(255, 238, 199);
 }
 
+:root {
+    --v-module-background-color: #ffffff;
+}
+
 .v-module-container {
     width: 100%;
     height: 100%;
