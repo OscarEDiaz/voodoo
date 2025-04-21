@@ -1,4 +1,8 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { auth } from '../../../firebase/config';
+import { useNavigate } from 'react-router-dom';
+import { routeConstants } from '../../../shared/constants';
 
 export const Navbar = ({ pageName }) => {
     const navigationItems = [
@@ -7,6 +11,17 @@ export const Navbar = ({ pageName }) => {
         'Test',
         'Test'
     ];
+
+    const navigate = useNavigate();
+
+    const handleLogOut = async () => {
+        try {
+            await signOut(auth);
+            navigate(routeConstants.UI_ROUTE_LOGIN);
+        } catch (error) {
+            alert(error);
+        }
+    };
 
     return (
         <ul>
@@ -20,6 +35,7 @@ export const Navbar = ({ pageName }) => {
                     )
                 })
             }
+            <button onClick={handleLogOut}>sing out</button>
         </ul>
     );
 };
