@@ -1,5 +1,5 @@
 "use strict";
 
 export const homeConstants = {
-    UI_HOME_TITLE: "Home"
+    UI_STR_HOME_TITLE: "Home"
 };
