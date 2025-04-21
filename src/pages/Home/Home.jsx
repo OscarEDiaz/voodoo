@@ -11,7 +11,7 @@ export const Home = () => {
     
 
     return (
-        <div className="v-app-container">
+        <div className="v-module-container">
             test
         </div>
     );
