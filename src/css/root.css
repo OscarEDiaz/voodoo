@@ -10,11 +10,14 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(255, 238, 199);
 }
 
 :root {
-    --v-module-background-color: #ffffff;
+    --v-main-module-background-color: rgb(255, 255, 255);
+    --v-login-font-color: rgb(123, 123, 123);
+    --v-main-border-color: rgb(219, 219, 219);
+    --v-main-box-shadow-color: rgb(237, 237, 237);
+    --v-main-focus-color: rgb(0, 76, 255);
 }
 
 .v-module-container {
