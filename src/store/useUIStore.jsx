@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import { create } from "zustand"
 import { homeConstants } from "../shared/constants"
 

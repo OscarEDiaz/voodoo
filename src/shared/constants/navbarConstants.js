@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 export const navbarConstants = {
     UI_STR_HOME: "Inicio",
     UI_STR_SALES: "Ventas",

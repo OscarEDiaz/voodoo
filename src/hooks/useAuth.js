@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import { useState, useEffect } from "react";
 
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";

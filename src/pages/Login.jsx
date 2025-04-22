@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import React, { useEffect } from 'react';
 
 import "../css/login.css";
@@ -12,7 +15,6 @@ import { LoginForm } from '../features/auth/components/LoginForm';
  *                  - auth
  * @returns Login component
  */
-
 export const Login = () => {
     const { setShowNavbar } = useNavbar();
     

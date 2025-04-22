@@ -1,8 +1,14 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
+"use strict";
+
 const paths = {
     LOGIN_PATH : '/login',
     HOME_PATH  : '/home',
     SALES_PATH : '/sales'
 }
+
 const routes = {
     LOGIN : { path : paths.LOGIN_PATH, replacementPath : paths.HOME_PATH  },
     HOME  : { path : paths.HOME_PATH,  replacementPath : paths.LOGIN_PATH },

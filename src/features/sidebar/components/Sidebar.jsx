@@ -1,5 +1,7 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import React, { useEffect, useState } from 'react'
-import { useSidebar } from '../hooks/useSidebar';
 
 import '../../../css/sidebar.css';
 
@@ -17,7 +19,7 @@ export const Sidebar = ({ sidebarItems, setModule }) => {
 
     const disconnected = () => {};
 
-    const focusNode = (selectedNode, itemIndex) => {
+    const focusNode = (selectedNode) => {
         selectedItem.node.style.borderColor = 'var(--v-main-border-color)';
         selectedItem.node.style.color = 'var(--v-login-font-color)';
         
@@ -29,7 +31,7 @@ export const Sidebar = ({ sidebarItems, setModule }) => {
         if (selectedItem === itemIndex) return;
         var selectedNode = document.querySelector('#sidebarItem_' + itemIndex);
 
-        focusNode(selectedNode, itemIndex);
+        focusNode(selectedNode);
         setModule(module);
         setSelectedItem({ itemIndex: itemIndex, node: selectedNode });
     };

@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import { create } from "zustand"
 
 export const useAuthStore = create((set) => ({

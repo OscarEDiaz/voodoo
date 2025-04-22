@@ -1,3 +1,6 @@
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import React, { useEffect, useState } from 'react';
 
 import { useNavbar } from '../features/navigation/hooks/useNavbar';

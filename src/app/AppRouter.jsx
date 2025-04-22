@@ -1,4 +1,6 @@
-// src/app/AppRouter.tsx
+// Copyright (c) 2025 [Oscar Emiliano Ramírez Díaz]
+// All rights reserved.
+
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useNavbar } from "../features/navigation/hooks/useNavbar";
