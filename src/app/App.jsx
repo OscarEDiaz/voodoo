@@ -7,12 +7,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
 export const App = () => {
-    const { showNavbar, pageTitle } = useNavbar();
+    const { showNavbar } = useNavbar();
     const { user } = useAuth();
 
     return (
         <BrowserRouter>
-            { (showNavbar && user) && <Navbar pageName={pageTitle} /> }
+            { (showNavbar && user) && <Navbar /> }
             <AppRouter />
         </BrowserRouter>
     );
