@@ -7,10 +7,15 @@ export const Home = () => {
     let connected = () => {
         setShowNavbar(true);
     };
+    
+    let disconnected = () => {
+        setShowNavbar(false);
+    };
 
     useEffect(() => {
-        console.log("connected home");
         connected();
+
+        return () => disconnected();
     }, [])
 
     return (
