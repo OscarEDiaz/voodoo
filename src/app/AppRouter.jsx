@@ -1,27 +1,66 @@
 // src/app/AppRouter.tsx
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Home, Login } from "../pages";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { routeConstants } from "../shared/constants";
+import { useNavbar } from "../features/navigation/hooks/useNavbar";
+import { routes } from "./routes";
+import { navbarConstants } from "../shared/constants/navbarConstants";
+import { Home, Login, Sales } from "../pages";
+import { useEffect } from "react";
 
 "use strict";
 
 export default function AppRouter() {
-  const { user } = useAuth();
+  const location = useLocation();
+  const { user, loading } = useAuth();
+  const { setPageTitle } = useNavbar();
+
+  const handleLocationChange = () => {
+    switch (location.pathname) {
+      case routes.HOME.path:
+        setPageTitle(navbarConstants.UI_STR_HOME);
+        break;
+      case routes.SALES.path:
+        setPageTitle(navbarConstants.UI_STR_SALES);
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(handleLocationChange, [location.pathname])
+
+  if (loading)
+    return;
 
   return (
     <Routes>
       <Route
-        path={routeConstants.UI_ROUTE_LOGIN}
-        element={ user ? <Navigate to={routeConstants.UI_ROUTE_HOME} replace /> : <Login /> }
+        path={routes.LOGIN.path}
+        element={
+          user
+          ? <Navigate to={routes.LOGIN.replacementPath} replace /> 
+          : <Login />
+        }
       />
       <Route
-        path={routeConstants.UI_ROUTE_HOME}
-        element={ user ? <Home /> : <Navigate to={routeConstants.UI_ROUTE_LOGIN} replace /> }
+        path={routes.HOME.path}
+        element={ 
+          user
+          ? <Home />
+          : <Navigate to={routes.HOME.replacementPath} replace /> 
+        }
+      />
+      <Route
+        path={routes.SALES.path}
+        element={ 
+          user
+          ? <Sales /> 
+          : <Navigate to={routes.SALES.replacementPath} replace /> 
+        }
       />
       <Route
         path="*"
-        element={ <Navigate to={routeConstants.UI_ROUTE_LOGIN} replace /> }
+        element={ <Navigate to={routes.LOGIN.path} replace /> }
       />
     </Routes>
   );
