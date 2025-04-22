@@ -1,0 +1,26 @@
+.v-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    border-right: 1px solid var(--v-main-border-color);
+}
+
+.v-sidebar-items-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.v-sidebar-items-container > li {
+    padding-left: 20px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--v-main-border-color);
+    color: var(--v-login-font-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
