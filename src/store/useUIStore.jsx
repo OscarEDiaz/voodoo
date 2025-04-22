@@ -1,8 +1,11 @@
 import { create } from "zustand"
+import { homeConstants } from "../shared/constants"
 
 export const useUIStore = create((set) => ({
-    showNavbar: true,
-    pageTitle: "Home",
+    showNavbar: false,
+    showSidebar: false,
+    pageTitle: homeConstants.UI_STR_HOME_TITLE,
     setShowNavbar: (value) => set({ showNavbar: value }),
+    setShowSidebar: (value) => set({ showSidebar: value }),
     setPageTitle: (title) => set({ pageTitle: title }),
 }))
